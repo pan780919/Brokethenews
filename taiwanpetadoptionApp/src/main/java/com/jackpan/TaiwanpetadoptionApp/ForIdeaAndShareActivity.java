@@ -1,5 +1,6 @@
 package com.jackpan.TaiwanpetadoptionApp;
 
+import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -10,6 +11,11 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.location.Address;
+import android.location.Criteria;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -23,9 +29,12 @@ import android.text.format.DateFormat;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +43,9 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.MutableData;
 import com.firebase.client.Transaction;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -46,17 +58,23 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageMetadata;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.jackpan.Brokethenews.R;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
-public class ForIdeaAndShareActivity extends Activity implements View.OnClickListener {
+import static com.jackpan.Brokethenews.R.menu.spinner;
+
+public class ForIdeaAndShareActivity extends Activity implements View.OnClickListener, android.location.LocationListener {
     private EditText mNameEdt, mMailEdt, mTiitleEdt, mMessageEdt;
     private Button mSureBtn, mCancelBtn;
     private ImageView mImg;
@@ -65,7 +83,13 @@ public class ForIdeaAndShareActivity extends Activity implements View.OnClickLis
     private final static int PHOTO = 99;
     private final static int VIDEO = 33;
     private String picUri = "";
+    private String picUri2 = "";
+    private String picUri3 = "";
+    private String picUri4 = "";
+    private String picUri5 = "";
     private String videoUri = "";
+    private String videoUri2 = "";
+    private String videoUri3 = "";
     CharSequence s;
     private Bitmap bitmap;
     private static final int PICKER = 100;
@@ -73,8 +97,22 @@ public class ForIdeaAndShareActivity extends Activity implements View.OnClickLis
     ImageView imageView;
     private static final int REQUEST_EXTERNAL_STORAGE = 200;
     private ProgressDialog progressDialog;
-    private TextView mPicName, mVideoName;
+    private TextView mPicName, mPicName2, mPicName3, mPicName4, mPicName5, mVideoName, mVideoName2,
+            mVideoName3;
     private Button mPicBtn, mVideoBtn;
+    private GoogleApiClient mGoogleApiClient;
+    protected Location mLastLocation;
+    private Spinner mSpinner, mSpinner2;
+    private EditText mAddEdt;
+    private Button mAddBtn;
+    private String mcatStr, mMoodStr;
+    String[] cat = {"食", "衣", "住", "行", "育", "樂"};
+    String[] mood = {"喜", "怒", "哀", "樂"};
+    private int picInt = 0;
+    private int videoInt = 0;
+    String returnAddress = "";
+    Double lat, lon;
+    LocationManager locationMgr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +120,9 @@ public class ForIdeaAndShareActivity extends Activity implements View.OnClickLis
         setContentView(R.layout.activity_for_idea_and_share);
         mPhone = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(mPhone);
+        MyApi.checkGPS(ForIdeaAndShareActivity.this);
+        this.locationMgr = (LocationManager) this.getSystemService(LOCATION_SERVICE);
+
         initLayout();
 
         Calendar mCal = Calendar.getInstance();
@@ -91,17 +132,74 @@ public class ForIdeaAndShareActivity extends Activity implements View.OnClickLis
 
     private void initLayout() {
         mPicName = (TextView) findViewById(R.id.picnametext);
+        mPicName2 = (TextView) findViewById(R.id.picnametext2);
+        mPicName3 = (TextView) findViewById(R.id.picnametext3);
+        mPicName4 = (TextView) findViewById(R.id.picnametext4);
+        mPicName5 = (TextView) findViewById(R.id.picnametext5);
         mVideoName = (TextView) findViewById(R.id.videonametext);
+        mVideoName2 = (TextView) findViewById(R.id.videonametext2);
+        mVideoName3 = (TextView) findViewById(R.id.videonametext3);
         mNameEdt = (EditText) findViewById(R.id.nameedt);
         mMailEdt = (EditText) findViewById(R.id.mailedt);
         mTiitleEdt = (EditText) findViewById(R.id.tittle);
         mMessageEdt = (EditText) findViewById(R.id.ideaedt);
+        mAddEdt = (EditText) findViewById(R.id.addedt);
         mSureBtn = (Button) findViewById(R.id.btn_sure_send);
         mCancelBtn = (Button) findViewById(R.id.btn_cancel_send);
+        mSpinner = (Spinner) findViewById(R.id.spinner1);
+        mSpinner2 = (Spinner) findViewById(R.id.spinner2);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, cat);
+        //設定下拉選單的樣式
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mSpinner.setAdapter(adapter);
+        mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(ForIdeaAndShareActivity.this, "您選擇" + parent.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+                mcatStr = parent.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+
+            }
+        });
+        ArrayAdapter adapter2 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, mood);
+        //設定下拉選單的樣式
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        mSpinner2.setAdapter(adapter2);
+        mSpinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(ForIdeaAndShareActivity.this, "您選擇" + parent.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+                mMoodStr = parent.getSelectedItem().toString();
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
         findViewById(R.id.btn_sure_send).setOnClickListener(this);
         findViewById(R.id.btn_cancel_send).setOnClickListener(this);
         findViewById(R.id.picbtn).setOnClickListener(this);
+        findViewById(R.id.picbtn2).setOnClickListener(this);
+        findViewById(R.id.picbtn3).setOnClickListener(this);
+        findViewById(R.id.picbtn4).setOnClickListener(this);
+        findViewById(R.id.picbtn5).setOnClickListener(this);
         findViewById(R.id.videobtn).setOnClickListener(this);
+        findViewById(R.id.videobtn2).setOnClickListener(this);
+        findViewById(R.id.videobtn3).setOnClickListener(this);
+        findViewById(R.id.addbtn).setOnClickListener(this);
+        mAddBtn = (Button) findViewById(R.id.addbtn);
+        mAddBtn.setVisibility(View.GONE);
+        returnAddress = mAddEdt.getText().toString().trim();
+        MyApi.AddtoLatLon(ForIdeaAndShareActivity.this, returnAddress);
+        lat = MyApi.getLatitude();
+        lon = MyApi.getLongitude();
+
     }
 
 
@@ -109,31 +207,104 @@ public class ForIdeaAndShareActivity extends Activity implements View.OnClickLis
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_sure_send:
+                if (mTiitleEdt.getText().toString().trim().equals("")) {
+                    Toast.makeText(ForIdeaAndShareActivity.this, "標題不能空白喔", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (mMessageEdt.getText().toString().trim().equals("")) {
+                    Toast.makeText(ForIdeaAndShareActivity.this, "內容不能空白喔", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (mNameEdt.getText().toString().trim().equals("")) {
+                    Toast.makeText(ForIdeaAndShareActivity.this, "名字不能空白喔", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (picUri.equals("")) {
+                    Toast.makeText(ForIdeaAndShareActivity.this, "至少放一張相片吧！！", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (returnAddress.equals("")) {
+                    Toast.makeText(ForIdeaAndShareActivity.this, "記得輸入地址喔！！", Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 setFireBaseDB(MySharedPrefernces.getUserId(this),
                         mTiitleEdt.getText().toString().trim(),
                         mMessageEdt.getText().toString().trim(),
+                        mcatStr,
+                        mMoodStr,
                         picUri,
+                        picUri2,
+                        picUri3,
+                        picUri4,
+                        picUri5,
+
                         mNameEdt.getText().toString().trim(),
                         videoUri,
-                        String.valueOf(s));
+                        videoUri2,
+                        videoUri3,
+
+                        String.valueOf(s),
+                        returnAddress,
+                        lat,
+                        lon
+
+                );
                 break;
             case R.id.btn_cancel_send:
                 ForIdeaAndShareActivity.this.finish();
                 break;
             case R.id.picbtn:
+                picInt = 1;
                 selectPic();
                 break;
+            case R.id.picbtn2:
+                picInt = 2;
+                selectPic();
+                break;
+            case R.id.picbtn3:
+                picInt = 3;
+                selectPic();
+                break;
+            case R.id.picbtn4:
+                picInt = 4;
+                selectPic();
+                break;
+            case R.id.picbtn5:
+                picInt = 5;
+                selectPic();
+                break;
+
             case R.id.videobtn:
+                videoInt = 1;
                 selectVideo();
+                break;
+
+            case R.id.videobtn2:
+                videoInt = 2;
+                selectVideo();
+                break;
+
+            case R.id.videobtn3:
+                videoInt = 3;
+                selectVideo();
+                break;
+            case R.id.addbtn:
+
+                if (mAddEdt.getText().toString().trim().equals("")) {
+                    Toast.makeText(ForIdeaAndShareActivity.this, "帶入地址！！", Toast.LENGTH_SHORT).show();
+                    mAddEdt.setText(returnAddress);
+                }
                 break;
         }
 
 
     }
 
-    private void setFireBaseDB(String id, String tittle, String message, String uri, String name, String videoUri, String date
-                               ) {
-        String url = "https://sevenpeoplebook.firebaseio.com/GayPlace";
+    private void setFireBaseDB(String id, String tittle, String message, String cat, String mood, String uri, String uri2, String uri3, String uri4
+            , String uri5, String name, String videoUri, String videoUri2, String videoUri3, String date,
+                               String adds, Double lat, Double lon
+    ) {
+        String url = "https://sevenpeoplebook.firebaseio.com/Broke";
         Firebase mFirebaseRef = new Firebase(url);
 //		Firebase userRef = mFirebaseRef.child("user");
 //		Map newUserData = new HashMap();
@@ -142,19 +313,32 @@ public class ForIdeaAndShareActivity extends Activity implements View.OnClickLis
         Firebase newPostRef = mFirebaseRef.child("posts").push();
 //        String newPostKey = newPostRef.getKey();
 //        Log.d(TAG, "setFireBaseDB: " + newPostKey);ㄐ
-        String key =id+date;
+        String key = id + date;
 
         Map newPost = new HashMap();
         newPost.put("id", id);
         newPost.put("name", name);
         newPost.put("tittle", tittle);
         newPost.put("message", message);
+        newPost.put("cat", cat);
+        newPost.put("mood", mood);
         newPost.put("pic", uri);
+        newPost.put("pic2", uri2);
+        newPost.put("pic3", uri3);
+        newPost.put("pic4", uri4);
+        newPost.put("pic5", uri5);
+        newPost.put("adds", adds);
+        newPost.put("lat", lat);
+        newPost.put("lon", lon);
         newPost.put("url", videoUri);
+        newPost.put("url2", videoUri2);
+        newPost.put("url3", videoUri3);
+
+
         newPost.put("date", date);
-        newPost.put("like",1);
-        newPost.put("view",1);
-        newPost.put("tomsg","");
+        newPost.put("like", 1);
+        newPost.put("view", 1);
+        newPost.put("tomsg", "");
         Map updatedUserData = new HashMap();
 //		updatedUserData.put("3/posts/" + newPostKey, true);
         updatedUserData.put(key, newPost);
@@ -163,14 +347,14 @@ public class ForIdeaAndShareActivity extends Activity implements View.OnClickLis
             public void onComplete(FirebaseError firebaseError, Firebase firebase) {
                 if (firebaseError != null) {
                     Log.d(TAG, "onComplete: " + "Error updating data: " + firebaseError.getMessage());
-                }else{
-                    Log.d(TAG, "onComplete: "+"is true");
+                } else {
+                    Log.d(TAG, "onComplete: " + "is true");
                     new AlertDialog.Builder(ForIdeaAndShareActivity.this)
                             .setTitle("訊息")
                             .setMessage("您已經發布文章成功,將跳回首頁！！")
                             .setPositiveButton("好", new DialogInterface.OnClickListener() {
                                 @Override
-                                public void  onClick(DialogInterface dialog, int which) {
+                                public void onClick(DialogInterface dialog, int which) {
                                     ForIdeaAndShareActivity.this.finish();
                                     dialog.dismiss();
 
@@ -362,7 +546,7 @@ public class ForIdeaAndShareActivity extends Activity implements View.OnClickLis
         StorageReference imageRef = storageRef.child(file.getLastPathSegment());
         StorageMetadata metadata = new StorageMetadata.Builder()
                 .setContentType("audio/mpeg")
-                .setCustomMetadata("country", "Thailand")
+                .setCustomMetadata("country", "x")
                 .build();
         UploadTask uploadTask = imageRef.putFile(file, metadata);
 
@@ -374,19 +558,41 @@ public class ForIdeaAndShareActivity extends Activity implements View.OnClickLis
             public void onFailure(@NonNull Exception exception) {
 
                 progressDialog.dismiss();
-                Toast.makeText(ForIdeaAndShareActivity.this,"上傳失敗",Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(ForIdeaAndShareActivity.this, "上傳失敗", Toast.LENGTH_SHORT).show();
 
 
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                mVideoName.setText(taskSnapshot.getMetadata().getName());
-                videoUri = taskSnapshot.getDownloadUrl().toString();
-                progressDialog.dismiss();
-                Toast.makeText(ForIdeaAndShareActivity.this,"上傳成功",Toast.LENGTH_SHORT).show();
+                switch (videoInt) {
+                    case 1:
+                        mVideoName.setText(taskSnapshot.getMetadata().getName());
+                        videoUri = taskSnapshot.getDownloadUrl().toString();
+                        progressDialog.dismiss();
+                        Toast.makeText(ForIdeaAndShareActivity.this, "上傳成功", Toast.LENGTH_SHORT).show();
 
+
+                        break;
+                    case 2:
+                        mVideoName2.setText(taskSnapshot.getMetadata().getName());
+                        videoUri2 = taskSnapshot.getDownloadUrl().toString();
+                        progressDialog.dismiss();
+                        Toast.makeText(ForIdeaAndShareActivity.this, "上傳成功", Toast.LENGTH_SHORT).show();
+
+
+                        break;
+
+                    case 3:
+                        mVideoName3.setText(taskSnapshot.getMetadata().getName());
+                        videoUri3 = taskSnapshot.getDownloadUrl().toString();
+                        progressDialog.dismiss();
+                        Toast.makeText(ForIdeaAndShareActivity.this, "上傳成功", Toast.LENGTH_SHORT).show();
+
+
+                        break;
+
+                }
 
 
             }
@@ -409,7 +615,7 @@ public class ForIdeaAndShareActivity extends Activity implements View.OnClickLis
         final boolean after44 = Build.VERSION.SDK_INT >= 19;
         String filePath = "";
 
-        if(after44){
+        if (after44) {
             String wholeID = DocumentsContract.getDocumentId(datauri);
 
 // Split at colon, use second item in the array
@@ -434,10 +640,10 @@ public class ForIdeaAndShareActivity extends Activity implements View.OnClickLis
             }
 
             cursor.close();
-        }else {
+        } else {
 
             try {
-                String[] filePathColumn = { MediaStore.Images.Media.DATA };
+                String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
                 Cursor cursor = getContentResolver().query(datauri,
                         filePathColumn, null, null, null);
@@ -445,7 +651,7 @@ public class ForIdeaAndShareActivity extends Activity implements View.OnClickLis
 
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                 filePath = cursor.getString(columnIndex);
-                Log.d(TAG, "uploadFromPic:"+filePath);
+                Log.d(TAG, "uploadFromPic:" + filePath);
                 cursor.close();
             } catch (Exception e) {
                 // TODO: handle exception
@@ -480,29 +686,55 @@ public class ForIdeaAndShareActivity extends Activity implements View.OnClickLis
 
             @Override
             public void onFailure(@NonNull Exception exception) {
-                Log.d(TAG, "onFailure: " + "onFailure: "+ exception.getMessage()
+                Log.d(TAG, "onFailure: " + "onFailure: " + exception.getMessage()
                 );
                 progressDialog.dismiss();
-                Toast.makeText(ForIdeaAndShareActivity.this,"上傳失敗",Toast.LENGTH_SHORT).show();
+                Toast.makeText(ForIdeaAndShareActivity.this, "上傳失敗", Toast.LENGTH_SHORT).show();
 
             }
         }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                Log.d(TAG, "onSuccess: " + "onSuccess: " + taskSnapshot.getMetadata().getName());
-                Log.d(TAG, "onSuccess: " + taskSnapshot.getUploadSessionUri());
-                Log.d(TAG, "onSuccess: " + taskSnapshot.getDownloadUrl());
+                switch (picInt) {
+                    case 1:
 
-//
-//                setFireBaseDB(mNameEdt.getText().toString().trim(),
-//                        mTiitleEdt.getText().toString().trim(),
-//                        mMessageEdt.getText().toString().trim(),
-//                        taskSnapshot.getDownloadUrl().toString());
-                picUri = taskSnapshot.getDownloadUrl().toString();
-//                test(picUri);
-                mPicName.setText(taskSnapshot.getMetadata().getName());
-                progressDialog.dismiss();
-                Toast.makeText(ForIdeaAndShareActivity.this,"上傳成功",Toast.LENGTH_SHORT).show();
+                        picUri = taskSnapshot.getDownloadUrl().toString();
+                        mPicName.setText(taskSnapshot.getMetadata().getName());
+                        progressDialog.dismiss();
+                        Toast.makeText(ForIdeaAndShareActivity.this, "上傳成功", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 2:
+
+                        picUri2 = taskSnapshot.getDownloadUrl().toString();
+                        mPicName2.setText(taskSnapshot.getMetadata().getName());
+                        progressDialog.dismiss();
+                        Toast.makeText(ForIdeaAndShareActivity.this, "上傳成功", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 3:
+
+                        picUri3 = taskSnapshot.getDownloadUrl().toString();
+                        mPicName3.setText(taskSnapshot.getMetadata().getName());
+                        progressDialog.dismiss();
+                        Toast.makeText(ForIdeaAndShareActivity.this, "上傳成功", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 4:
+
+                        picUri4 = taskSnapshot.getDownloadUrl().toString();
+                        mPicName4.setText(taskSnapshot.getMetadata().getName());
+                        progressDialog.dismiss();
+                        Toast.makeText(ForIdeaAndShareActivity.this, "上傳成功", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 5:
+
+                        picUri5 = taskSnapshot.getDownloadUrl().toString();
+                        mPicName5.setText(taskSnapshot.getMetadata().getName());
+                        progressDialog.dismiss();
+                        Toast.makeText(ForIdeaAndShareActivity.this, "上傳成功", Toast.LENGTH_SHORT).show();
+                        break;
+
+
+                }
+
 
             }
 
@@ -562,6 +794,126 @@ public class ForIdeaAndShareActivity extends Activity implements View.OnClickLis
             }
         }
         return null;
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+        Log.e("Jack", "onLocationChanged...");
+        if (location == null) return;
+
+        String msg = "經度: " + location.getLongitude() + ", 緯度: "
+                + location.getLatitude();
+        Log.e("Jack", msg);
+        lat = location.getLatitude();
+        lon = location.getLongitude();
+        try {
+            Geocoder gc = new Geocoder(ForIdeaAndShareActivity.this, Locale.TRADITIONAL_CHINESE);
+            List<Address> lstAddress = null;
+            lstAddress = gc.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+            returnAddress = lstAddress.get(0).getAddressLine(0);
+            Log.d(TAG, "onLocationChanged: " + returnAddress);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        mAddBtn.setVisibility(View.VISIBLE);
+        this.locationMgr.removeUpdates(this);
+
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+
+    }
+
+    @Override
+    public void onProviderEnabled(String provider) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(String provider) {
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //  mAdapter.updateData(mAllData);
+        // 取得位置提供者，不下條件，讓系統決定最適用者，true 表示生效的 provider
+        String provider = this.locationMgr.getBestProvider(new Criteria(), true);
+        if (provider == null) {
+
+            return;
+        }
+        if (locationMgr.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
+            locationMgr.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 30000, 10, this);
+        }
+        if (locationMgr.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
+
+            locationMgr.requestLocationUpdates(LocationManager.GPS_PROVIDER, 30000, 10, this);
+
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.e("jack", "removeUpdates...");
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        this.locationMgr.removeUpdates(this);
     }
 
 }

@@ -55,6 +55,7 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.google.gson.Gson;
 import com.igexin.sdk.PushManager;
+import com.jackpan.Brokethenews.R;
 import com.jackpan.MyPushService;
 import com.jackpan.TaiwanpetadoptionApp.ForIdeaAndShareActivity;
 import com.jackpan.TaiwanpetadoptionApp.GayPlace;
@@ -63,7 +64,7 @@ import com.jackpan.TaiwanpetadoptionApp.MainActivity;
 import com.jackpan.TaiwanpetadoptionApp.MyIntentService;
 import com.jackpan.TaiwanpetadoptionApp.MySharedPrefernces;
 import com.jackpan.TaiwanpetadoptionApp.Post;
-import com.jackpan.TaiwanpetadoptionApp.R;
+
 import com.jackpan.TaiwanpetadoptionApp.ResultData;
 import com.jackpan.TaiwanpetadoptionApp.TwoActivity;
 import com.jackpan.TaiwanpetadoptionApp.UserActivity;

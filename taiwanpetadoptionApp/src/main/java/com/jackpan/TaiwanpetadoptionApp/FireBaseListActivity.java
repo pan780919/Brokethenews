@@ -13,7 +13,7 @@ import com.firebase.client.FirebaseError;
 
 import java.util.ArrayList;
 
-
+import com.jackpan.Brokethenews.R;
 public class FireBaseListActivity extends Activity {
     ListView listView ;
 

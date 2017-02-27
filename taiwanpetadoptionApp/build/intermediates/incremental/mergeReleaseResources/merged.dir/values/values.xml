@@ -747,7 +747,7 @@
     <string name="accept">Accept</string>
     <string name="action_settings">贊助</string>
     <string name="admob_unit_id">ca-app-pub-7019441527375550/4887903024</string>
-    <string name="app_name">同志分享天堂</string>
+    <string name="app_name">我就是愛爆料APP</string>
     <string name="banner_ad_unit_id">ca-app-pub-7019441527375550/1880466629</string>
     <string name="cancel">取消</string>
     <string name="cast_ad_label">Ad</string>
@@ -855,7 +855,7 @@
     <string name="ga_trackingId">UA-58399132-49</string>
     <string name="gcm_defaultSenderId" translatable="false">288164734372</string>
     <string name="google_api_key" translatable="false">AIzaSyDJJjZv_cTlmUmzDXS7QCHflsOaFq5nncs</string>
-    <string name="google_app_id" translatable="false">1:288164734372:android:cfb8ac12f234eae4</string>
+    <string name="google_app_id" translatable="false">1:288164734372:android:e6ca03af20066755</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDJJjZv_cTlmUmzDXS7QCHflsOaFq5nncs</string>
     <string name="google_storage_bucket" translatable="false">sevenpeoplebook.appspot.com</string>
     <string name="hello_world">Hello world!</string>
@@ -890,11 +890,11 @@
     <string name="tagmanager_preview_dialog_message">Preview mode updated.</string>
     <string name="tagmanager_preview_dialog_title">Preview</string>
     <string name="title_activity_fire_base_list">FireBaseListActivity</string>
-    <string name="title_activity_headpage">同志分享天堂</string>
+    <string name="title_activity_headpage">我就是愛爆料APP</string>
     <string name="title_activity_in_app_billing">贊助開發者</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_spinner">SpinnerActivity</string>
-    <string name="title_activity_two">同志分享天堂</string>
+    <string name="title_activity_two">我就是愛爆料APP</string>
     <string name="title_activity_user">會員中心</string>
     <string name="title_activity_user_messge">留言板</string>
     <string name="title_activity_video_view">VideoViewActivity</string>

@@ -17,13 +17,16 @@ import android.widget.VideoView;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.jackpan.TaiwanpetadoptionApp.R;
 
+import com.google.android.gms.ads.InterstitialAd;
+import com.jackpan.Brokethenews.R;
 
 
 public class VideoViewActivity extends Activity {
     private ProgressDialog progressDialog;
     private ImageView imageView;
+
+
     private static final String TAG = "VideoViewActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,4 +110,5 @@ public class VideoViewActivity extends Activity {
             }
         });
     }
+
 }

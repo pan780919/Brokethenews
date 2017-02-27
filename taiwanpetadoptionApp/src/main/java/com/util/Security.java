@@ -18,8 +18,8 @@ package com.util;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.jackpan.TaiwanpetadoptionApp.BuildConfig;
 
+import  com.jackpan.Brokethenews.BuildConfig;
 import java.security.InvalidKeyException;
 import java.security.KeyFactory;
 import java.security.NoSuchAlgorithmException;

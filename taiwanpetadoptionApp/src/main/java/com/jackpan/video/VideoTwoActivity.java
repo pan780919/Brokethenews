@@ -41,7 +41,7 @@ import com.jackpan.TaiwanpetadoptionApp.GayPlace;
 import com.jackpan.TaiwanpetadoptionApp.InAppBillingActivity;
 import com.jackpan.TaiwanpetadoptionApp.MyApi;
 import com.jackpan.TaiwanpetadoptionApp.MySharedPrefernces;
-import com.jackpan.TaiwanpetadoptionApp.R;
+
 import com.jackpan.TaiwanpetadoptionApp.UserActivity;
 import com.jackpan.TaiwanpetadoptionApp.UserMessgeActivity;
 import com.jackpan.VideoViewActivity;
@@ -54,7 +54,7 @@ import Appkey.MyAdKey;
 
 //import com.adlocus.AdLocusLayout$ErrorCode;
 //import com.google.analytics.tracking.android.EasyTracker;
-
+import com.jackpan.Brokethenews.R;
 public class VideoTwoActivity extends Activity {
 	private TextView textview,textview2,textview3,textview4,
 	textview5,textview6,textview7,textview8,textview9,textview10,textview11,

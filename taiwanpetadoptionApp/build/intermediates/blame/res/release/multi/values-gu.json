@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-gu/values-gu.xml",
+        "outputFile": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-gu/values-gu.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 174
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 0,
@@ -30,7 +30,7 @@
                     "endOffset": 254
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 0,
@@ -49,7 +49,7 @@
                     "endOffset": 362
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 0,
@@ -68,7 +68,7 @@
                     "endOffset": 450
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 0,
@@ -87,7 +87,7 @@
                     "endOffset": 559
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 0,
@@ -106,7 +106,7 @@
                     "endOffset": 648
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 0,
@@ -125,7 +125,7 @@
                     "endOffset": 768
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 0,
@@ -144,7 +144,7 @@
                     "endOffset": 878
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 0,
@@ -163,7 +163,7 @@
                     "endOffset": 996
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 0,
@@ -182,7 +182,7 @@
                     "endOffset": 1108
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 0,
@@ -201,7 +201,7 @@
                     "endOffset": 1210
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 0,
@@ -220,7 +220,7 @@
                     "endOffset": 1293
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 0,
@@ -239,7 +239,7 @@
                     "endOffset": 1389
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 0,
@@ -258,7 +258,7 @@
                     "endOffset": 1488
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 0,
@@ -277,7 +277,7 @@
                     "endOffset": 1596
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 0,
@@ -296,7 +296,7 @@
                     "endOffset": 1674
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 0,
@@ -315,7 +315,7 @@
                     "endOffset": 1815
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 0,
@@ -334,7 +334,7 @@
                     "endOffset": 1963
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 0,
@@ -353,7 +353,7 @@
                     "endOffset": 2065
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 0,
@@ -372,7 +372,7 @@
                     "endOffset": 2141
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 0,
@@ -391,7 +391,7 @@
                     "endOffset": 2215
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 0,
@@ -410,7 +410,7 @@
                     "endOffset": 2298
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 0,
@@ -429,7 +429,7 @@
                     "endOffset": 2394
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 0,
@@ -448,7 +448,7 @@
                     "endOffset": 2493
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 23,
                         "startColumn": 0,
@@ -467,7 +467,7 @@
                     "endOffset": 2601
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 24,
                         "startColumn": 0,
@@ -486,7 +486,7 @@
                     "endOffset": 2691
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 25,
                         "startColumn": 0,
@@ -505,7 +505,7 @@
                     "endOffset": 2785
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 26,
                         "startColumn": 0,
@@ -524,7 +524,7 @@
                     "endOffset": 2858
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 27,
                         "startColumn": 0,
@@ -543,7 +543,7 @@
                     "endOffset": 2956
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 28,
                         "startColumn": 0,
@@ -562,7 +562,7 @@
                     "endOffset": 3052
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 29,
                         "startColumn": 0,
@@ -581,7 +581,7 @@
                     "endOffset": 3151
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 30,
                         "startColumn": 0,
@@ -600,7 +600,7 @@
                     "endOffset": 3295
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 31,
                         "startColumn": 0,
@@ -619,7 +619,7 @@
                     "endOffset": 3424
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 32,
                         "startColumn": 0,
@@ -638,7 +638,7 @@
                     "endOffset": 3555
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 33,
                         "startColumn": 0,
@@ -657,7 +657,7 @@
                     "endOffset": 3654
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 34,
                         "startColumn": 0,
@@ -676,7 +676,7 @@
                     "endOffset": 3746
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 35,
                         "startColumn": 0,
@@ -695,7 +695,7 @@
                     "endOffset": 3851
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 36,
                         "startColumn": 0,
@@ -714,7 +714,7 @@
                     "endOffset": 3933
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast-framework/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 37,
                         "startColumn": 0,
@@ -733,7 +733,7 @@
                     "endOffset": 4101
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -752,7 +752,7 @@
                     "endOffset": 4212
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -771,7 +771,7 @@
                     "endOffset": 4333
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -790,7 +790,7 @@
                     "endOffset": 4426
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -809,7 +809,7 @@
                     "endOffset": 4497
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -828,7 +828,7 @@
                     "endOffset": 4569
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -847,7 +847,7 @@
                     "endOffset": 4637
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -866,7 +866,7 @@
                     "endOffset": 4709
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -885,7 +885,7 @@
                     "endOffset": 4785
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -904,7 +904,7 @@
                     "endOffset": 4883
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -923,7 +923,7 @@
                     "endOffset": 4976
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -942,7 +942,7 @@
                     "endOffset": 5054
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -961,7 +961,7 @@
                     "endOffset": 5132
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -980,7 +980,7 @@
                     "endOffset": 5222
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -999,7 +999,7 @@
                     "endOffset": 5330
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -1018,7 +1018,7 @@
                     "endOffset": 5394
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -1037,7 +1037,7 @@
                     "endOffset": 5461
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -1056,7 +1056,7 @@
                     "endOffset": 5602
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -1075,7 +1075,7 @@
                     "endOffset": 5712
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 0,
@@ -1094,7 +1094,7 @@
                     "endOffset": 5910
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 0,
@@ -1113,7 +1113,7 @@
                     "endOffset": 6037
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 0,
@@ -1132,7 +1132,7 @@
                     "endOffset": 6151
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 0,
@@ -1151,7 +1151,7 @@
                     "endOffset": 6348
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 0,
@@ -1170,7 +1170,7 @@
                     "endOffset": 6472
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 0,
@@ -1189,7 +1189,7 @@
                     "endOffset": 6601
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 0,
@@ -1208,7 +1208,7 @@
                     "endOffset": 6807
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 0,
@@ -1227,7 +1227,7 @@
                     "endOffset": 7014
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 0,
@@ -1246,7 +1246,7 @@
                     "endOffset": 7124
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 0,
@@ -1265,7 +1265,7 @@
                     "endOffset": 7319
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 0,
@@ -1284,7 +1284,7 @@
                     "endOffset": 7446
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 0,
@@ -1303,7 +1303,7 @@
                     "endOffset": 7648
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 0,
@@ -1322,7 +1322,7 @@
                     "endOffset": 7828
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 0,
@@ -1341,7 +1341,7 @@
                     "endOffset": 7919
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 0,
@@ -1360,7 +1360,7 @@
                     "endOffset": 8015
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 0,
@@ -1379,7 +1379,7 @@
                     "endOffset": 8126
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 0,
@@ -1398,7 +1398,7 @@
                     "endOffset": 8256
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 0,
@@ -1417,7 +1417,7 @@
                     "endOffset": 8358
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 0,
@@ -1436,7 +1436,7 @@
                     "endOffset": 8457
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 0,
@@ -1455,7 +1455,7 @@
                     "endOffset": 8566
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 0,
@@ -1474,7 +1474,7 @@
                     "endOffset": 8659
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 0,
@@ -1493,7 +1493,7 @@
                     "endOffset": 8758
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 0,
@@ -1512,7 +1512,7 @@
                     "endOffset": 8830
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 0,
@@ -1531,7 +1531,7 @@
                     "endOffset": 8891
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.facebook.android/facebook-android-sdk/4.19.0/res/values-gu/values-gu.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -1550,7 +1550,7 @@
                     "endOffset": 8993
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-places/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-places/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 0,
@@ -1569,7 +1569,7 @@
                     "endOffset": 9087
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-places/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-places/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 0,
@@ -1588,7 +1588,7 @@
                     "endOffset": 9224
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 0,
@@ -1607,7 +1607,7 @@
                     "endOffset": 9312
                 },
                 "from": {
-                    "file": "/Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/res/values-gu/values.xml",
+                    "file": "/Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/9.8.0/res/values-gu/values.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 0,

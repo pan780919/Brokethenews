@@ -8,7 +8,9 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import com.jackpan.TaiwanpetadoptionApp.R;
+
+import com.jackpan.Brokethenews.R;
+
 
 public class DialogUtils {
 	/**

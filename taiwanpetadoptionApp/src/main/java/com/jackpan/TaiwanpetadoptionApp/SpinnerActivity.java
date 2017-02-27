@@ -8,7 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Spinner;
 import android.widget.TextView;
-
+import com.jackpan.Brokethenews.R;
 public class SpinnerActivity extends Activity {
 	private Spinner spinner;
 	private TextView textview;

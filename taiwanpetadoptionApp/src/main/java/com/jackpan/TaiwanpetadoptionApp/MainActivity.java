@@ -99,7 +99,7 @@ import com.igexin.sdk.PushManager;
 import com.jackpan.MyPushService;
 import com.jackpan.VideoViewActivity;
 import com.jackpan.video.VideoMainActivity;
-
+import com.jackpan.Brokethenews.R;
 public class MainActivity extends Activity {
     private ListView petlist;
     //	private ArrayAdapter<String>petadp;
@@ -572,12 +572,12 @@ public class MainActivity extends Activity {
             TextView textname = (TextView) convertView.findViewById(R.id.name);
             TextView list = (TextView) convertView.findViewById(R.id.txtengname);
             TextView bigtext = (TextView) convertView.findViewById(R.id.bigtext);
-            bigtext.setVisibility(View.GONE);
+
             TextView place = (TextView) convertView.findViewById(R.id.palace);
             TextView time = (TextView) convertView.findViewById(R.id.time);
             TextView  userview = (TextView) convertView.findViewById(R.id.view);
             TextView  userlike = (TextView) convertView.findViewById(R.id.like);
-
+            bigtext.setText(taipeiZoo.cat);
             textname.setText(taipeiZoo.getTittle());
             list.setText("作者:" +taipeiZoo.getName());
             time.setText("發文時間:"+taipeiZoo.getDate());
@@ -761,7 +761,7 @@ public class MainActivity extends Activity {
 
     private void setFireBase() {
         Firebase.setAndroidContext(this);
-        String url = "https://sevenpeoplebook.firebaseio.com/GayPlace";
+        String url = "https://sevenpeoplebook.firebaseio.com/Broke";
 
         Firebase mFirebaseRef = new Firebase(url);
 
@@ -958,15 +958,15 @@ public class MainActivity extends Activity {
             startActivity(new Intent(MainActivity.this,UserActivity.class));
             return true;
         }
-        if (id == R.id.action_settings) {
-            startActivity(new Intent(MainActivity.this,InAppBillingActivity.class));
-
-            return true;
-        }
-        if (id== R.id.action_video){
-            startActivity(new Intent(MainActivity.this, VideoMainActivity.class));
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            startActivity(new Intent(MainActivity.this,InAppBillingActivity.class));
+//
+//            return true;
+//        }
+//        if (id== R.id.action_video){
+//            startActivity(new Intent(MainActivity.this, VideoMainActivity.class));
+//            return true;
+//        }
         return super.onOptionsItemSelected(item);
     }
 }

@@ -31,6 +31,78 @@
 				    >
 
                 </ImageView>
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp" />
+                <ImageView
+                    android:id="@+id/pageimg2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/nophoto"
+                    >
+                </ImageView>
+                <RelativeLayout
+                    android:id="@+id/adViewContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp" />
+                <ImageView
+                    android:id="@+id/pageimg3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/nophoto"
+
+                    >
+
+                </ImageView>
+                <RelativeLayout
+                    android:id="@+id/adViewContainer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp" />
+
+                <ImageView
+                    android:id="@+id/pageimg4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/nophoto"
+
+                    >
+
+                </ImageView>
+                <RelativeLayout
+                    android:id="@+id/adViewContainer3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+                <ImageView
+                    android:id="@+id/pageimg5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/nophoto"
+
+                    >
+
+                </ImageView>
                        <Button
                            android:layout_width="wrap_content"
                            android:layout_height="wrap_content"
@@ -169,8 +241,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="20dp" />
 
-                <TextView
-                    android:id="@+id/textView9"
+                <Button
+                    android:id="@+id/buttongps"
+                    android:text="導航"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -251,69 +324,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
-                <View
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
-                <ImageView
-                    android:id="@+id/pageimg2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/nophoto"
-                    >
-                </ImageView>
-                <RelativeLayout
-                    android:id="@+id/adViewContainer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    />
 
-                <TextView
-                    android:id="@+id/textView16"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-                                <View            
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
-                <ImageView
-                    android:id="@+id/pageimg3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/nophoto"
 
-                    >
-
-                </ImageView>
-                <RelativeLayout
-                    android:id="@+id/adViewContainer2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    />
-
-                <TextView
-                    android:id="@+id/textView18"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-                                <View            
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp" />
-
-                <ImageView
-                    android:id="@+id/pageimg4"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/nophoto"
-
-                    >
-
-                </ImageView>
-
-                <RelativeLayout
-                    android:id="@+id/adViewContainer3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    />
 
                 <TextView
                     android:id="@+id/textView20"

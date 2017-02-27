@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_user_messge"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -55,11 +56,18 @@
         android:layout_weight="8"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <com.adbert.AdbertLoopADView
-            android:gravity="bottom"
-            android:id="@+id/adbertADView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </com.adbert.AdbertLoopADView>
+        <!--<com.adbert.AdbertLoopADView-->
+            <!--android:gravity="bottom"-->
+            <!--android:id="@+id/adbertADView"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content">-->
+        <!--</com.adbert.AdbertLoopADView>-->
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/banner_ad_unit_id" >
+        </com.google.android.gms.ads.AdView>
     </LinearLayout>
 </LinearLayout>

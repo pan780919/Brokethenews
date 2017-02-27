@@ -14,12 +14,23 @@ public class GayPlace{
     public  String tittle;
     public  String message;
     public  String pic;
-    private String name;
-    private String date;
-    private String url;
-    public  int   like = -1;
+    public  String pic2;
+    public  String pic3;
+    public  String pic4;
+    public  String pic5;
+    public String name;
+    public String date;
+    public String url;
+    public String url2;
+    public String url3;
+    public String adds;
+    public  Double lat;
+    public  Double lon;
+    public  int   like = 1;
     public  String tomsg;
-    public  int   view = -1;
+    public  int   view =1;
+    public  String mood;
+    public  String cat;
 
 //    List<ForMsg> ForMsg;
 

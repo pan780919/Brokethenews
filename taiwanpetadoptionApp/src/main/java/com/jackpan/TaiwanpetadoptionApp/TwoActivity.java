@@ -1,12 +1,22 @@
 package com.jackpan.TaiwanpetadoptionApp;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.location.Address;
+import android.location.Criteria;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -39,23 +49,31 @@ import com.firebase.client.Transaction;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.gson.Gson;
 import com.jackpan.VideoViewActivity;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.DecimalFormat;
+import java.util.List;
+import java.util.Locale;
 
 import Appkey.MyAdKey;
+import com.facebook.ads.*;
 
 //import com.adlocus.AdLocusLayout$ErrorCode;
 //import com.google.analytics.tracking.android.EasyTracker;
-
-public class TwoActivity extends Activity {
+import com.jackpan.Brokethenews.R;
+public class TwoActivity extends Activity implements android.location.LocationListener {
 	private TextView textview,textview2,textview3,textview4,
 	textview5,textview6,textview7,textview8,textview9,textview10,textview11,
 	textview12,textview13,textview14,textview15,textview16,textview17,textview18,textview19,textview20,textview21;
-	private ImageView img,img2,img3,img4;
+	private ImageView img,img2,img3,img4,img5;
 	private Button btn;
 	private boolean isCencel = false;
 	private ProgressDialog progressDialog;
@@ -70,8 +88,13 @@ public class TwoActivity extends Activity {
 	String likeid;
 	private  Button mUserLikeBtn;
 	private  TextView mUserText;
-	private  Button toUserMsg;
+	private  Button toUserMsg,mBtnGPS;
 
+	private com.facebook.ads.InterstitialAd interstitialAd;
+
+	Double lat, lon;
+	Double endlat,endlon;
+	LocationManager locationMgr;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -82,11 +105,14 @@ public class TwoActivity extends Activity {
 //		        requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_two);
 		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+		MyApi.checkGPS(TwoActivity.this);
+		this.locationMgr = (LocationManager) this.getSystemService(LOCATION_SERVICE);
 		mAdView = (AdView) findViewById(R.id.adView);
 		setAd();
 		checkBuyAd();
 		initLayout();
 		loadIntent();
+		loadInterstitialAd();
 //		Like();
 		FacebookSdk.sdkInitialize(getApplicationContext());
 		callbackManager = CallbackManager.Factory.create();
@@ -139,7 +165,8 @@ public class TwoActivity extends Activity {
 		textview6 = (TextView) findViewById(R.id.textView6);
 		textview7 = (TextView) findViewById(R.id.textView7);
 		textview8= (TextView) findViewById(R.id.textView8);
-		textview9= (TextView) findViewById(R.id.textView9);
+		mBtnGPS= (Button) findViewById(R.id.buttongps);
+		mBtnGPS.setText("位置讀取中！！");
 		textview10= (TextView) findViewById(R.id.textView10);
 		textview11= (TextView) findViewById(R.id.textView11);
 		textview12= (TextView) findViewById(R.id.textView12);
@@ -153,6 +180,8 @@ public class TwoActivity extends Activity {
 		img3= (ImageView) findViewById(R.id.pageimg3);
 		textview18= (TextView) findViewById(R.id.textView18);
 		img4= (ImageView) findViewById(R.id.pageimg4);
+		img5= (ImageView) findViewById(R.id.pageimg5);
+
 		textview20= (TextView) findViewById(R.id.textView20);
 		textview21= (TextView) findViewById(R.id.textView21);
 		img = (ImageView) findViewById(R.id.pageimg);
@@ -171,6 +200,23 @@ public class TwoActivity extends Activity {
 //			Log.d(TAG, "loadIntent: "+forMsg.id);
 //			Log.d(TAG, "loadIntent: "+forMsg.tomsg);
 //		}
+		mShareBtn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if (ShareDialog.canShow(ShareLinkContent.class)) {
+					ShareLinkContent linkContent = new ShareLinkContent.Builder()
+							.setContentTitle("我要推薦好文章")
+							.setContentDescription(data.getMessage())
+							.setContentUrl(Uri.parse("https://play.google.com/store/apps/details?id=com.jackpan.Brokethenews"))
+							.setImageUrl(Uri.parse(data.getPic()))
+							.build();
+					shareDialog.show(linkContent);
+				}
+				MyApi.copyToClipboard(getApplication(),data.getMessage());
+			}
+		});
+		endlat =data.lat;
+		endlon =data.lon;
 		likeid = data.getId()+data.getDate();
 		loadImage(data.getPic(), img);
 		textview.setText("標題:"+data.getTittle());
@@ -189,23 +235,34 @@ public class TwoActivity extends Activity {
 				 startActivity(i);
 			 }
 		 });
-
-		textview5.setText("發文時間:"+data.getDate());
-				mShareBtn.setOnClickListener(new View.OnClickListener() {
+		if(!data.url2.equals(""))textview5.setText("點擊觀看影片");
+		else textview5.setText("無影片可觀看");
+		textview5.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				if (ShareDialog.canShow(ShareLinkContent.class)) {
-					ShareLinkContent linkContent = new ShareLinkContent.Builder()
-							.setContentTitle("我要推薦好文章")
-							.setContentDescription(data.getMessage())
-							.setContentUrl(Uri.parse("https://play.google.com/store/apps/details?id=com.jackpan.GayPlace"))
-							.setImageUrl(Uri.parse(data.getPic()))
-							.build();
-					shareDialog.show(linkContent);
-				}
-				MyApi.copyToClipboard(getApplication(),data.getMessage());
+				if(data.url2.equals("")) return;
+				Intent i = new Intent(TwoActivity.this, VideoViewActivity.class);
+				Bundle bundle = new Bundle();
+				bundle.putString("video",data.url2);
+				i.putExtras(bundle);
+				startActivity(i);
 			}
 		});
+		if(!data.url3.equals(""))textview6.setText("點擊觀看影片");
+		else textview6.setText("無影片可觀看");
+		textview6.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if(data.url3.equals("")) return;
+				Intent i = new Intent(TwoActivity.this, VideoViewActivity.class);
+				Bundle bundle = new Bundle();
+				bundle.putString("video",data.url3);
+				i.putExtras(bundle);
+				startActivity(i);
+			}
+		});
+
+
 		mUserLikeBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -238,11 +295,33 @@ public class TwoActivity extends Activity {
 		});
 		if(data.getView()!=0)userView();
 		mUserText.setText(data.getLike()+"人");
-//		textview6.setText("學名:"+data.A_Name_Latin);
-//		textview7.setText("分類學_門:"+data.A_Phylum);
+		textview7.setText("此刻心情:"+data.mood);
+		textview8.setText("發生地點:"+data.adds);
+		mBtnGPS.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if(mBtnGPS.getText().toString().trim().equals("位置讀取中！！"))return;
+				double startLatitude = lat;
+				double startLongitude = lon;
+
+				double endLatitude = data.lat;
+				double endLongitude = data.lon;
+
+				String saddr = "saddr=" + startLatitude + "," + startLongitude;
+				String daddr = "daddr=" + endLatitude + "," + endLongitude;
+				String uriString = "http://maps.google.com/maps?" + saddr + "&" + daddr;
+
+				Uri uri = Uri.parse(uriString);
+
+				Intent intent = new Intent(android.content.Intent.ACTION_VIEW, uri);
+
+				startActivity(intent);
+			}
+		});
 //		textview8.setText("分類學_綱:"+data.A_Class);
 //		textview9.setText("分類學_目:"+data.A_Order);
-//		textview10.setText("分類學_科:"+data.A_Family);
+
+
 //		textview11.setText("保育等級:"+data.A_Conservation);
 //		textview12.setText("地理分布:"+data.A_Distribution);
 //		textview13.setText("棲地型態:"+data.A_Habitat);
@@ -251,11 +330,12 @@ public class TwoActivity extends Activity {
 //		textview17.setText("形態特徵:"+data.A_Feature );
 //		textview19.setText("生態習性:"+data.A_Behavior);
 //		textview21.setText("食性:"+data.A_Diet);
-//		loadImage(data.A_Pic02_URL, img2);
+		loadImage(data.pic2, img2);
 //		textview16.setText(data.A_Pic02_ALT);
-//		loadImage(data.A_Pic03_URL, img3);
+		loadImage(data.pic3, img3);
 //		textview18.setText(data.A_Pic03_ALT);
-//		loadImage(data.A_Pic04_URL, img4);
+		loadImage(data.pic4, img4);
+		loadImage(data.pic5, img4);
 //		textview20.setText(data.A_Pic04_ALT);
 
 	}
@@ -263,12 +343,12 @@ public class TwoActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.two, menu);
+		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 	private void Like(){
 
-		String url = "https://sevenpeoplebook.firebaseio.com/GayPlace";
+		String url = "https://sevenpeoplebook.firebaseio.com/Broke";
 		Firebase mFirebaseRef = new Firebase(url);
 
 		Firebase countRef = mFirebaseRef.child(likeid).child("like");
@@ -296,7 +376,7 @@ public class TwoActivity extends Activity {
 	}
 	private void userView(){
 
-		String url = "https://sevenpeoplebook.firebaseio.com/GayPlace";
+		String url = "https://sevenpeoplebook.firebaseio.com/Broke";
 		Firebase mFirebaseRef = new Firebase(url);
 
 		Firebase countRef = mFirebaseRef.child(likeid).child("view");
@@ -326,13 +406,13 @@ public class TwoActivity extends Activity {
 		// automatically handle clicks on the Home/Up button, so long
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			Intent i = new Intent();
-			i.setClass(TwoActivity.this,InAppBillingActivity.class);
-			startActivity(i);
-
-			return true;
-		}
+//		if (id == R.id.action_settings) {
+//			Intent i = new Intent();
+//			i.setClass(TwoActivity.this,InAppBillingActivity.class);
+//			startActivity(i);
+//
+//			return true;
+//		}
 
 		if(id == R.id.action_user){
 			startActivity(new Intent(TwoActivity.this,UserActivity.class));
@@ -345,7 +425,9 @@ public class TwoActivity extends Activity {
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();
-
+		if (interstitialAd != null) {
+			interstitialAd.destroy();
+		}
 
 
 	}
@@ -463,7 +545,9 @@ public class TwoActivity extends Activity {
 			finish();
 			boolean isBuy = MySharedPrefernces.getIsBuyed(TwoActivity.this);
 
-			if(!isBuy)interstitial.show();
+//			if(!isBuy)interstitial.show();
+			interstitialAd.show();
+
 			return true;  
 
 		}  
@@ -500,5 +584,160 @@ public class TwoActivity extends Activity {
 		adViewContainer3.addView(adView3);
 		adView3.loadAd();
 
+	}
+	private void loadInterstitialAd() {
+		interstitialAd = new com.facebook.ads.InterstitialAd(this, "583698071813390_680915735424956");
+		interstitialAd.setAdListener(new InterstitialAdListener() {
+			@Override
+			public void onInterstitialDisplayed(Ad ad) {
+
+			}
+
+			@Override
+			public void onInterstitialDismissed(Ad ad) {
+
+			}
+
+			@Override
+			public void onError(Ad ad, AdError adError) {
+
+			}
+
+			@Override
+			public void onAdLoaded(Ad ad) {
+				interstitialAd.show();
+
+			}
+
+			@Override
+			public void onAdClicked(Ad ad) {
+
+			}
+		});
+		interstitialAd.loadAd();
+	}
+
+	@Override
+	public void onLocationChanged(Location location) {
+		Log.e("Jack", "onLocationChanged...");
+		if (location == null) return;
+
+		String msg = "經度: " + location.getLongitude() + ", 緯度: "
+				+ location.getLatitude();
+		Log.e("Jack", msg);
+		lat = location.getLatitude();
+		lon = location.getLongitude();
+		try {
+			Geocoder gc = new Geocoder(TwoActivity.this, Locale.TRADITIONAL_CHINESE);
+			List<Address> lstAddress = null;
+			lstAddress = gc.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+
+		if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+			// TODO: Consider calling
+			//    ActivityCompat#requestPermissions
+			// here to request the missing permissions, and then overriding
+			//   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+			//                                          int[] grantResults)
+			// to handle the case where the user grants the permission. See the documentation
+			// for ActivityCompat#requestPermissions for more details.
+			return;
+		}
+
+
+		if (lat!=null&&lon!=null){
+			float distance = 0;
+			Location crntLocation = new Location("");
+			crntLocation.setLatitude(lat);
+			crntLocation.setLongitude(lon);
+
+			Location newLocation = new Location("");
+			newLocation.setLatitude(endlat);
+			newLocation.setLongitude(endlon);
+			distance = crntLocation.distanceTo(newLocation); // in mdistance = distance / 1000;//km
+
+			String km =  new DecimalFormat("0.0").format(distance/1000);
+
+			textview10.setText("距離" +km+"公里");
+
+		}
+		mBtnGPS.setText("導航功能準備完成!!");
+		this.locationMgr.removeUpdates(this);
+	}
+
+	@Override
+	public void onStatusChanged(String provider, int status, Bundle extras) {
+
+	}
+
+	@Override
+	public void onProviderEnabled(String provider) {
+
+	}
+
+	@Override
+	public void onProviderDisabled(String provider) {
+
+	}
+	@Override
+	protected void onResume() {
+		super.onResume();
+		//  mAdapter.updateData(mAllData);
+		// 取得位置提供者，不下條件，讓系統決定最適用者，true 表示生效的 provider
+		String provider = this.locationMgr.getBestProvider(new Criteria(), true);
+		if (provider == null) {
+
+			return;
+		}
+		if (locationMgr.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+			if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+				// TODO: Consider calling
+				//    ActivityCompat#requestPermissions
+				// here to request the missing permissions, and then overriding
+				//   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+				//                                          int[] grantResults)
+				// to handle the case where the user grants the permission. See the documentation
+				// for ActivityCompat#requestPermissions for more details.
+				return;
+			}
+			locationMgr.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 30000, 10, this);
+		}
+		if (locationMgr.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+			if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+				// TODO: Consider calling
+				//    ActivityCompat#requestPermissions
+				// here to request the missing permissions, and then overriding
+				//   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+				//                                          int[] grantResults)
+				// to handle the case where the user grants the permission. See the documentation
+				// for ActivityCompat#requestPermissions for more details.
+				return;
+			}
+
+			locationMgr.requestLocationUpdates(LocationManager.GPS_PROVIDER, 30000, 10, this);
+
+		}
+	}
+
+	@Override
+	protected void onPause() {
+		super.onPause();
+		Log.e("jack", "removeUpdates...");
+		if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+			// TODO: Consider calling
+			//    ActivityCompat#requestPermissions
+			// here to request the missing permissions, and then overriding
+			//   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+			//                                          int[] grantResults)
+			// to handle the case where the user grants the permission. See the documentation
+			// for ActivityCompat#requestPermissions for more details.
+			return;
+		}
+		this.locationMgr.removeUpdates(this);
 	}
 }

@@ -5,7 +5,7 @@ import android.content.Context;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
-
+import com.jackpan.Brokethenews.R;
 /**
  * Created by HYXEN20141227 on 2016/3/9.
  */

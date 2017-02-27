@@ -19,7 +19,7 @@ import com.util.Purchase;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import com.jackpan.Brokethenews.R;
 public class InAppBillingActivity extends Activity {
     static final String ITEM_MY_FREE = "my_free";
 //    static final String ITEM_SPONSOR_MONth = "sponsor_month";

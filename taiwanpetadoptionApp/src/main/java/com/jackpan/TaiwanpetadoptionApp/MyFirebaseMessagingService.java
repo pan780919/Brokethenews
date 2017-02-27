@@ -15,7 +15,7 @@ import com.google.firebase.messaging.RemoteMessage;
 /**
  * Created by HYXEN20141227 on 2016/6/28.
  */
-
+import com.jackpan.Brokethenews.R;
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
     private static final String TAG = "MyFirebaseMsgService";
 

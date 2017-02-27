@@ -19,7 +19,7 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.jhengweipan.SevenPeopleBook",
-            "certificate_hash": "73775138A59F1345BC25DC32F6B4B8453F7BA3EF"
+            "certificate_hash": "73775138a59f1345bc25dc32f6b4b8453f7ba3ef"
           }
         },
         {
@@ -63,7 +63,7 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.jackpan.TaiwanpetadoptionApp",
-            "certificate_hash": "73775138A59F1345BC25DC32F6B4B8453F7BA3EF"
+            "certificate_hash": "73775138a59f1345bc25dc32f6b4b8453f7ba3ef"
           }
         },
         {
@@ -107,7 +107,7 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.jhengweipan.pokemongosharetw",
-            "certificate_hash": "73775138A59F1345BC25DC32F6B4B8453F7BA3EF"
+            "certificate_hash": "73775138a59f1345bc25dc32f6b4b8453f7ba3ef"
           }
         },
         {
@@ -151,7 +151,7 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.jhengweipan.RayApparel",
-            "certificate_hash": "73775138A59F1345BC25DC32F6B4B8453F7BA3EF"
+            "certificate_hash": "73775138a59f1345bc25dc32f6b4b8453f7ba3ef"
           }
         },
         {
@@ -195,7 +195,7 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.jhengweipan.tattoofans",
-            "certificate_hash": "73775138A59F1345BC25DC32F6B4B8453F7BA3EF"
+            "certificate_hash": "73775138a59f1345bc25dc32f6b4b8453f7ba3ef"
           }
         },
         {
@@ -239,7 +239,7 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.jhengweipan.AssistantGUI",
-            "certificate_hash": "73775138A59F1345BC25DC32F6B4B8453F7BA3EF"
+            "certificate_hash": "73775138a59f1345bc25dc32f6b4b8453f7ba3ef"
           }
         },
         {
@@ -283,7 +283,7 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.jackpan.TaipeiZoo",
-            "certificate_hash": "73775138A59F1345BC25DC32F6B4B8453F7BA3EF"
+            "certificate_hash": "73775138a59f1345bc25dc32f6b4b8453f7ba3ef"
           }
         },
         {
@@ -327,7 +327,51 @@
           "client_type": 1,
           "android_info": {
             "package_name": "com.jackpan.GayPlace",
-            "certificate_hash": "73775138A59F1345BC25DC32F6B4B8453F7BA3EF"
+            "certificate_hash": "73775138a59f1345bc25dc32f6b4b8453f7ba3ef"
+          }
+        },
+        {
+          "client_id": "288164734372-e6srsdkb53id69lgkendti7anv1bhcm9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJJjZv_cTlmUmzDXS7QCHflsOaFq5nncs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "288164734372-e6srsdkb53id69lgkendti7anv1bhcm9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:288164734372:android:e6ca03af20066755",
+        "android_client_info": {
+          "package_name": "com.jackpan.Brokethenews"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "288164734372-i2gjvg3518sq6j5sqd4ccfguul6sno5q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jackpan.Brokethenews",
+            "certificate_hash": "73775138a59f1345bc25dc32f6b4b8453f7ba3ef"
           }
         },
         {

@@ -1,5 +1,5 @@
--injars /Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/transforms/jarMerging/debug/jars/1/1f/combined.jar
--outjars /Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/multi-dex/debug/componentClasses.jar
+-injars /Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/transforms/jarMerging/debug/jars/1/1f/combined.jar
+-outjars /Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/multi-dex/debug/componentClasses.jar
 
 -libraryjars /Users/jackpan/Library/Android/sdk/build-tools/23.0.2/lib/shrinkedAndroid.jar
 
@@ -10,7 +10,7 @@
 -dontpreverify
 -dontnote **
 -dontwarn **
--printconfiguration /Users/jackpan/TaipeiZoo/taiwanpetadoptionApp/build/intermediates/multi-dex/debug/components.flags
+-printconfiguration /Users/jackpan/Brokethenews/taiwanpetadoptionApp/build/intermediates/multi-dex/debug/components.flags
 
 
 -keep class android.support.multidex.MultiDexApplication {

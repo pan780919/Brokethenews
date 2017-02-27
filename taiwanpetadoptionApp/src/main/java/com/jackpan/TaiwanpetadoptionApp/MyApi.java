@@ -2,8 +2,13 @@ package com.jackpan.TaiwanpetadoptionApp;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.LocationManager;
+import android.provider.Settings;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -16,12 +21,37 @@ import java.net.URL;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 /**
  * Created by HYXEN20141227 on 2016/6/24.
  */
 public class MyApi {
+    private  static  Double latitude,longitude;
+    public  static void AddtoLatLon(Context context,String store_add){
+
+
+
+        try {
+            Geocoder geoCoder = new Geocoder(context, Locale.getDefault());
+            List<Address> addressLocation = geoCoder.getFromLocationName(store_add, 1);
+            if(addressLocation.size()<=0){}else {
+             latitude = addressLocation.get(0).getLatitude();
+             longitude = addressLocation.get(0).getLongitude();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static  Double getLatitude() {
+        return latitude;
+    }
+
+    public static  Double getLongitude() {
+        return longitude;
+    }
 
     public static long getTime(String dateTime){
 
@@ -91,5 +121,19 @@ public class MyApi {
         }.start();
 
     }
+    public static  void  checkGPS(Context context){
+        //取得系統定位服務
+        LocationManager status = (LocationManager) (context.getSystemService(Context.LOCATION_SERVICE));
+        if (status.isProviderEnabled(LocationManager.GPS_PROVIDER) || status.isProviderEnabled(LocationManager.NETWORK_PROVIDER))
 
+        {
+            Log.e("Jack","有開啟定位服務");
+        } else {
+            Log.e("Jack","請開啟定位服務");
+            Toast.makeText(context, "請開啟定位服務,才能使用定位喔", Toast.LENGTH_LONG).show();
+            context.startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)); //開啟設定頁面
+        }
+
+
+    }
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jackpan.GayPlace.test" >
+    package="com.jackpan.Brokethenews.test" >
 
     <uses-sdk
         android:minSdkVersion="15"
@@ -10,8 +10,8 @@
         android:name="com.android.test.runner.MultiDexTestRunner"
         android:functionalTest="false"
         android:handleProfiling="false"
-        android:label="Tests for com.jackpan.GayPlace"
-        android:targetPackage="com.jackpan.GayPlace" />
+        android:label="Tests for com.jackpan.Brokethenews"
+        android:targetPackage="com.jackpan.Brokethenews" />
 
     <application>
         <uses-library android:name="android.test.runner" />

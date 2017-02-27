@@ -23,6 +23,9 @@ import com.firebase.client.Transaction;
 
 import java.util.Calendar;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.jackpan.Brokethenews.R;
 
 public class UserMessgeActivity extends Activity implements View.OnClickListener {
     AdbertLoopADView adbertView;
@@ -33,14 +36,18 @@ public class UserMessgeActivity extends Activity implements View.OnClickListener
     String name = "";
     String  tomsg= "";
     CharSequence s;
+    AdView admobAd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_messge);
         getWindow().setFormat(PixelFormat.TRANSPARENT);
         getUserid();
-        showAD();
+//        showAD();
         initLayout();
+        admobAd = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        admobAd.loadAd(adRequest);
     }
 
     private static final String TAG = "UserMessgeActivity";
@@ -85,7 +92,7 @@ public class UserMessgeActivity extends Activity implements View.OnClickListener
     }
     private void toMsg(final String msg) {
 
-        String url = "https://sevenpeoplebook.firebaseio.com/GayPlace";
+        String url = "https://sevenpeoplebook.firebaseio.com/Broke";
         Firebase mFirebaseRef = new Firebase(url);
 
         Firebase countRef = mFirebaseRef.child(id).child("tomsg");

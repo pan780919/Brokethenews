@@ -1,5 +1,5 @@
 package com.jackpan.video;
-
+import com.jackpan.Brokethenews.R;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -37,7 +37,7 @@ import com.google.firebase.storage.StorageMetadata;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.jackpan.TaiwanpetadoptionApp.MySharedPrefernces;
-import com.jackpan.TaiwanpetadoptionApp.R;
+
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

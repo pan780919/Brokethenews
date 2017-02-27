@@ -48,7 +48,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-
+import com.jackpan.Brokethenews.R;
 
 public class UserActivity extends Activity implements View.OnClickListener{
     private ImageView mUsetImg;
